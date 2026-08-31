@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About - Image To URL</title>
+<meta name="description" content="About the Image To URL tool and its developer, Kalicharan Murmu.">
+<link rel="canonical" href="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/about.html">
+<meta name="theme-color" content="#3654FF">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About - Image To URL">
+<meta property="og:description" content="About the Image To URL tool and its developer, Kalicharan Murmu.">
+<meta property="og:image" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/assets/og-image.png">
+<meta property="og:url" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/about.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About - Image To URL">
+<meta name="twitter:description" content="About the Image To URL tool and its developer, Kalicharan Murmu.">
+<meta name="twitter:image" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/assets/og-image.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 128 128" width="28" height="28" aria-hidden="true"><rect width="128" height="128" rx="28" fill="#3654FF"/><g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"><rect x="24" y="40" width="42" height="42" rx="14" transform="rotate(-18 45 61)"/><rect x="62" y="46" width="42" height="42" rx="14" transform="rotate(-18 83 67)"/></g></svg>
+      Image To URL
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="image-url-to-image.html">URL → Image</a>
+      <a href="developers.html">Developers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero"><div class="wrap prose"><h1>About Image To URL</h1></div></section>
+  <section class="wrap prose" style="padding-bottom:60px;">
+    <p>Image To URL is a small, focused developer utility: pick an image, get back a real public HTTPS link, and drop it straight into HTML, CSS, Markdown, a GitHub README, or anywhere else that accepts an image URL. No accounts, no clutter — just the upload-to-link flow, done properly.</p>
+
+    <h2>Developer</h2>
+    <p><strong>Kalicharan Murmu</strong> — Founder / Developer</p>
+    <ul id="about-links">
+      <li>Website: <span id="about-site">Not set yet</span></li>
+      <li>GitHub: <span id="about-github">Not set yet</span></li>
+      <li>Contact: <span id="about-email">Not set yet</span></li>
+    </ul>
+
+    <h2>How it's built</h2>
+    <p>Plain HTML, CSS and vanilla JavaScript — deployable straight to GitHub Pages, with image storage handled by an external provider so no backend server is required.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 Image To URL</span>
+      <a href="index.html">Back to Image To URL</a>
+    </div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (SITE_CONFIG.siteUrl) {
+      const a = document.createElement("a"); a.href = SITE_CONFIG.siteUrl; a.textContent = SITE_CONFIG.siteUrl;
+      document.getElementById("about-site").replaceWith(a);
+    }
+    if (SITE_CONFIG.githubUrl) {
+      const a = document.createElement("a"); a.href = SITE_CONFIG.githubUrl; a.textContent = SITE_CONFIG.githubUrl;
+      document.getElementById("about-github").replaceWith(a);
+    }
+    if (SITE_CONFIG.contactEmail) {
+      const a = document.createElement("a"); a.href = "mailto:" + SITE_CONFIG.contactEmail; a.textContent = SITE_CONFIG.contactEmail;
+      document.getElementById("about-email").replaceWith(a);
+    }
+  });
+</script>
+</body>
+</html>

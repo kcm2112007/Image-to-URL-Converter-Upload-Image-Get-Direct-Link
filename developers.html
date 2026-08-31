@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer Docs - Using Image To URL Links in Code</title>
+<meta name="description" content="How to use Image To URL's generated public image links in HTML, CSS, Markdown and JavaScript, plus notes on hotlinking, caching, and URL stability.">
+<link rel="canonical" href="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/developers.html">
+<meta name="theme-color" content="#3654FF">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developer Docs - Using Image To URL Links in Code">
+<meta property="og:description" content="How to use Image To URL's generated public image links in HTML, CSS, Markdown and JavaScript, plus notes on hotlinking, caching, and URL stability.">
+<meta property="og:image" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/assets/og-image.png">
+<meta property="og:url" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/developers.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Developer Docs - Using Image To URL Links in Code">
+<meta name="twitter:description" content="How to use Image To URL's generated public image links in HTML, CSS, Markdown and JavaScript, plus notes on hotlinking, caching, and URL stability.">
+<meta name="twitter:image" content="https://kcm2112007.github.io/Image-to-URL-Converter-Upload-Image-Get-Direct-Link/assets/og-image.png">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"/developers.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 128 128" width="28" height="28" aria-hidden="true"><rect width="128" height="128" rx="28" fill="#3654FF"/><g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"><rect x="24" y="40" width="42" height="42" rx="14" transform="rotate(-18 45 61)"/><rect x="62" y="46" width="42" height="42" rx="14" transform="rotate(-18 83 67)"/></g></svg>
+      Image To URL
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="image-url-to-image.html">URL → Image</a>
+      <a href="developers.html" aria-current="page">Developers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle color theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4-.7-.7M6.3 6.3l-.7-.7m12.8 0-.7.7M6.3 17.7l-.7.7"/><circle cx="12" cy="12" r="5"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap prose">
+      <h1>Developer documentation</h1>
+      <p>Everything you need to use a generated Image To URL link in your own code.</p>
+    </div>
+  </section>
+
+  <section class="wrap prose">
+    <h2>Using the URL</h2>
+    <p>Every uploaded image gets one direct, permanent HTTPS URL. Paste it anywhere that accepts an image link:</p>
+
+    <h3 class="mono" style="font-size:.9rem;">HTML</h3>
+    <div class="snippet-panel active" style="border-radius:var(--radius-m);"><pre><code>&lt;img src="YOUR_IMAGE_URL" alt="Description"&gt;</code></pre></div>
+
+    <h3 class="mono" style="font-size:.9rem;margin-top:20px;">CSS</h3>
+    <div class="snippet-panel active" style="border-radius:var(--radius-m);"><pre><code>background-image: url("YOUR_IMAGE_URL");</code></pre></div>
+
+    <h3 class="mono" style="font-size:.9rem;margin-top:20px;">Markdown / GitHub README</h3>
+    <div class="snippet-panel active" style="border-radius:var(--radius-m);"><pre><code>![Description](YOUR_IMAGE_URL)</code></pre></div>
+
+    <h3 class="mono" style="font-size:.9rem;margin-top:20px;">JavaScript</h3>
+    <div class="snippet-panel active" style="border-radius:var(--radius-m);"><pre><code>const image = "YOUR_IMAGE_URL";</code></pre></div>
+
+    <h2>Public URLs</h2>
+    <p>A generated URL is publicly reachable by anyone who has it. There is no login check on the image itself — that's what makes it usable in HTML, CSS, and other tools in the first place. Don't upload anything you don't want to be publicly accessible.</p>
+
+    <h2>Hotlinking</h2>
+    <p>You can reference the URL directly (hotlink) from any website, app, or document. The image is served from the storage provider's CDN, not from this site's own server.</p>
+
+    <h2>Caching</h2>
+    <p>Storage-provider CDNs cache aggressively for speed. If you re-upload a file under the same public ID, some viewers may keep showing a cached copy for a while — use a new public ID for a guaranteed-fresh URL.</p>
+
+    <h2>URL stability</h2>
+    <p>URLs are intended to be permanent for as long as the underlying storage account and file exist. This tool does not control the storage provider's own retention policies — check your provider's dashboard for account-level limits.</p>
+
+    <h2>File formats</h2>
+    <p>JPG, PNG, WebP, GIF and AVIF are supported for upload. SVG is disabled by default because SVG files can contain executable script content; an operator can enable it only after adding their own sanitization.</p>
+
+    <h2>Usage limitations</h2>
+    <p>Bandwidth and storage are governed by whatever plan the site owner has with their storage provider — this tool does not provide unlimited bandwidth, and heavy traffic on a free-tier account may be throttled or billed by the provider.</p>
+  </section>
+
+  <section class="wrap prose" id="api">
+    <h2>Future API — coming soon</h2>
+    <p>These are <strong>not implemented yet</strong>. This section exists so developers know what's planned:</p>
+    <ul>
+      <li>REST upload API</li>
+      <li>API keys for server-to-server uploads</li>
+      <li>Signed uploads for stricter access control</li>
+      <li>Webhooks on upload completion</li>
+      <li>On-the-fly image transformations</li>
+      <li>A developer dashboard with usage analytics</li>
+    </ul>
+  </section>
+
+  <section class="wrap prose">
+    <h2>Technology &amp; services used</h2>
+    <p>This site is a static frontend (HTML, CSS, vanilla JavaScript) deployable on GitHub Pages. It relies on the following external services to work:</p>
+    <ul>
+      <li><strong>Cloudinary</strong> — image storage and CDN delivery, via an unsigned browser upload preset.</li>
+      <li><strong>qrcode.js</strong> (loaded from cdnjs) — generates the downloadable QR code for a URL, entirely in the browser.</li>
+      <li><strong>Google Fonts</strong> — Space Grotesk, Inter and JetBrains Mono.</li>
+    </ul>
+    <p>No analytics are enabled by default. If the site owner turns analytics on, it will be documented on the <a href="privacy.html">Privacy</a> page.</p>
+  </section>
+
+  <section class="wrap prose" style="padding-bottom:60px;">
+    <h2>Setting up your own deployment</h2>
+    <p>Full setup instructions — creating a Cloudinary account, configuring an unsigned upload preset, and deploying to GitHub Pages — are in this project's <code>README.md</code>.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 Image To URL</span>
+      <a href="index.html">Back to Image To URL</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
