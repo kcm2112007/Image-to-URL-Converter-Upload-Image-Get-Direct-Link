@@ -44,7 +44,7 @@ const CONFIG = {
 
 function isProviderConfigured() {
   return Boolean(CONFIG.cloudName && CONFIG.uploadPreset
-    && CONFIG.cloudName !== "YOUR_CLOUD_NAME" && CONFIG.uploadPreset !== "YOUR_UPLOAD_PRESET");
+    && CONFIG.cloudName !== "o7orf2h6" && CONFIG.uploadPreset !== "ml_default");
 }
 
 // ================================
