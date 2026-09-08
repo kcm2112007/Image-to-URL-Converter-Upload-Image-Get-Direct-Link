@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Image To URL icon">
+  <rect width="512" height="512" rx="112" fill="#3654FF"/>
+  <!-- single bold interlocked link, simplified for legibility at small sizes -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round">
+    <rect x="96" y="150" width="180" height="180" rx="60" transform="rotate(-18 186 240)"/>
+    <rect x="248" y="182" width="180" height="180" rx="60" transform="rotate(-18 338 272)"/>
+  </g>
+  <!-- picture glyph, enlarged and simplified -->
+  <g transform="translate(168,272)">
+    <rect x="0" y="0" width="150" height="112" rx="18" fill="#FFFFFF"/>
+    <circle cx="38" cy="36" r="16" fill="#3654FF"/>
+    <path d="M10 96 L58 52 L86 78 L118 42 L142 96 Z" fill="#3654FF"/>
+  </g>
+</svg>
